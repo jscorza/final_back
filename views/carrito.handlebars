@@ -1,0 +1,40 @@
+<div>
+  <h1>Carrito de Compras</h1>
+  <h3>Hola {{usuario.nombre}}, al comprar, compraras todo los productos del carrito que tengamos en stock,<br> en caso de no haber stock suficiente, las unidades que no hayas podido comprar permaneceran en tu carrito</h3>
+
+  {{#if productos.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>||    Producto      ||</th>
+          <th>Precio Unitario     ||</th>
+          <th>Cantidad    ||</th>
+          <th>Precio Total    ||</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productos}}
+          <tr>
+            <td>{{producto.title}}</td>
+            <td>{{producto.price}}</td>
+            <td>{{quantity}}</td>
+            <td>{{qp}}</td>
+            <td>
+              <button type="button" class="eliminar" value="{{producto.id}}">Eliminar</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p>Total del Carrito: {{totalCarrito}}</p>
+
+    <button type="button" class="comprar">Comprar</button>
+  
+  {{else}}
+    <p>No hay productos en el carrito.</p>
+  {{/if}}
+</div>
+
+<script  type="module" src="/js/carrito.js"></script>

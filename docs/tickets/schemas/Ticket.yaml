@@ -1,0 +1,28 @@
+components:
+  schemas:
+    Ticket:
+      type: object
+      required:
+        - id
+        - purchaser
+        - amount
+        - purchase_datetime
+      properties:
+        id:
+          type: string
+          description: El ID del ticket.
+        purchaser:
+          type: string
+          description: El ID del comprador del ticket.
+        amount:
+          type: number
+          description: El monto del ticket.
+        purchase_datetime:
+          type: string
+          format: date-time
+          description: La fecha y hora de compra del ticket.
+      example:
+        id: abc123-def456-ghi789
+        purchaser: 5h58sk24u-3j5k2hr3-t5u6-365n-sk8ghd7
+        amount: 100.50
+        purchase_datetime: '2023-07-30T12:34:56Z'

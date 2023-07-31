@@ -1,0 +1,19 @@
+paths:
+  /api/tickets:
+    get:
+      summary: Devuelve todos los tickets.
+      tags:
+        - Tickets
+      responses:
+        "200":
+          description: Éxito. Devuelve la lista de todos los tickets.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para acceder a los tickets.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

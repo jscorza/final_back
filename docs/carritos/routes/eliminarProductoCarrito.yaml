@@ -1,0 +1,26 @@
+paths:
+  /api/carritos/eliminar-producto/{id}:
+    put:
+      summary: Elimina un producto del carrito abierto del usuario.
+      tags:
+        - Carritos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del producto a eliminar del carrito.
+          required: true
+          schema:
+            type: string
+      security:
+        - jwt: []
+      requestBody:
+        required: false
+      responses:
+        "200":
+          description: Producto eliminado exitosamente del carrito abierto.
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para eliminar productos del carrito.
+        "404":
+          description: No encontrado. Producto no encontrado con el ID dado en el carrito.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

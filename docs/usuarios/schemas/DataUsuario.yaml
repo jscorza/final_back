@@ -1,0 +1,54 @@
+components:
+  requestBodies:
+    DataUsuario:
+      type: object
+      required:
+        - id
+        - nombre
+        - email
+        - password
+        - rol
+      properties:
+        id:
+          type: string
+          description: El ID del usuario.
+        nombre:
+          type: string
+          description: El nombre del usuario.
+        email:
+          type: string
+          format: email
+          description: El correo electrónico del usuario.
+        password:
+          type: string
+          description: La contraseña del usuario.
+        rol:
+          type: string
+          description: El rol del usuario.
+        edad:
+          type: number
+          description: La edad del usuario.
+        carritos:
+          type: array
+          items:
+            type: object
+            properties:
+              idCarrito:
+                type: string
+                description: El ID del carrito asociado al usuario.
+              estado:
+                type: string
+                description: El estado del carrito asociado al usuario.
+          description: La lista de carritos asociados al usuario.
+      example:
+        id: 5h58sk24u-3j5k2hr3-t5u6-365n-sk8ghd7
+        nombre: Juan Pérez
+        email: juan@example.com
+        password: 123456
+        rol: user
+        edad: 30
+        carritos:
+          - idCarrito: 8sk23j5k2h-d7r34ugh-t5u6-365n-sk85
+            estado: disponible
+          - idCarrito: h5h58sk24u-3j5k2hr3-t5u6-365n-sk8ghd7
+            estado: cerrado

@@ -1,0 +1,32 @@
+paths:
+  /api/productos/{id}:
+    put:
+      summary: Actualiza un producto existente, identificandolo por su ID.
+      tags:
+        - Productos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del producto a actualizar.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Producto'
+      responses:
+        "200":
+          description: Éxito. El producto ha sido actualizado exitosamente.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        "400":
+          description: Solicitud incorrecta. Los datos proporcionados no son válidos.
+        "404":
+          description: No encontrado. Producto no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

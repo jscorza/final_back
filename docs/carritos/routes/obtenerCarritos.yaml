@@ -1,0 +1,17 @@
+paths:
+  /api/carritos:
+    get:
+      summary: Devuelve todos los carritos.
+      tags:
+        - Carritos
+      responses:
+        "200":
+          description: Éxito. Devuelve un array de carritos.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Carrito'
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

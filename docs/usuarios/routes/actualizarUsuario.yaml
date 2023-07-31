@@ -1,0 +1,36 @@
+paths:
+  /api/usuarios/{id}:
+    put:
+      summary: Actualiza un usuario por su ID.
+      tags:
+        - Usuarios
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del usuario a actualizar.
+          required: true
+          schema:
+            type: string
+      security:
+        - jwt: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/DataUsuario'
+      responses:
+        "200":
+          description: Éxito. Usuario actualizado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        "400":
+          description: Solicitud incorrecta. Datos proporcionados no válidos.
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para actualizar sus datos.
+        "404":
+          description: No encontrado. Usuario no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

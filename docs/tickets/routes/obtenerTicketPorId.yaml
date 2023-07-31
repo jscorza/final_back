@@ -1,0 +1,26 @@
+paths:
+  /api/tickets/{id}:
+    get:
+      summary: Devuelve un ticket por su ID.
+      tags:
+        - Tickets
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del ticket a obtener.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Éxito. Devuelve el ticket solicitado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para acceder al ticket.
+        "404":
+          description: No encontrado. Ticket no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

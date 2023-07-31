@@ -1,0 +1,40 @@
+paths:
+  /api/carritos/agregar-carrito:
+    put:
+      summary: Agrega un carrito al usuario logueado.
+      tags:
+        - Carritos
+      security:
+        - jwt: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - idUsuario
+                - idCarrito
+              properties:
+                idUsuario:
+                  type: string
+                  description: El ID del usuario al que se agregará el carrito.
+                idCarrito:
+                  type: string
+                  description: El ID del carrito que se agregará al usuario.
+              example:
+                idUsuario: 5h58sk24u-3j5k2hr3-t5u6-365n-sk8ghd7
+                idCarrito: 8sk23j5k2h-d7r34ugh-t5u6-365n-sk85
+      responses:
+        "200":
+          description: Éxito. Usuario actualizado con el carrito agregado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        "400":
+          description: Solicitud incorrecta. Datos proporcionados no válidos.
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para agregar un carrito.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

@@ -1,0 +1,26 @@
+paths:
+  /api/carritos/{id}:
+    get:
+      summary: Devuelve un carrito por su ID.
+      tags:
+        - Carritos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del carrito a obtener.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Éxito. Devuelve el carrito con el ID dado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'
+        "400":
+          description: Solicitud incorrecta. El ID proporcionado no es válido.
+        "404":
+          description: No encontrado. Carrito no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

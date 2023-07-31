@@ -1,0 +1,24 @@
+paths:
+  /api/productos/{id}:
+    delete:
+      summary: Elimina un producto por su ID.
+      tags:
+        - Productos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del producto a eliminar.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Éxito. El producto ha sido eliminado exitosamente.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        "404":
+          description: No encontrado. Producto no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

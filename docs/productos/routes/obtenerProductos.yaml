@@ -1,0 +1,21 @@
+paths:
+  /api/productos:
+    get:
+      summary: Devuelve todos los productos registrados.
+      tags:
+        - Productos
+      responses:
+        "200":
+          description: Éxito. Devuelve un array de productos registrados.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+        "400":
+          description: Solicitud incorrecta. La solicitud no es válida o falta algún parámetro requerido.
+        "404":
+          description: No encontrado. No se encontraron productos.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

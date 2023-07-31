@@ -1,0 +1,27 @@
+paths:
+  /api/carritos/comprar/carrito:
+    put:
+      summary: Realiza una compra con el carrito actual del usuario (el usuario debe estar logueado).
+      tags:
+        - Carritos
+      security:
+        - jwt: []
+      requestBody:
+        required: false
+      responses:
+        "200":
+          description: Compra realizada exitosamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: number
+                    description: El código de estado de la compra.
+                example:
+                  status: 200
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para realizar una compra.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

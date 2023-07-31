@@ -1,0 +1,19 @@
+paths:
+  /api/usuarios:
+    get:
+      summary: Devuelve todos los usuarios disponibles.
+      tags:
+        - Usuarios
+      responses:
+        "200":
+          description: Cada usuario disponible.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Usuario'
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para obtener los datos.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

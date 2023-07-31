@@ -1,0 +1,14 @@
+tags:
+  - name: Productos
+    description: API para administrar productos.
+
+  - name: Usuarios
+    description: API para administrar usuarios.
+
+  - name: Carritos
+    description: API para administrar carritos.
+
+  - name: Tickets
+    description: API para administrar tickets.
+
+

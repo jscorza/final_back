@@ -1,0 +1,152 @@
+<div>
+<h1>Productos</h1>
+
+{{#each productos}}
+<div class="product">
+  <h2>{{title}}</h2>
+  <p>{{description}}</p>
+  <p>Precio: {{price}}</p>
+  <p>Stock: {{stock}}</p>
+  <button class="add-to-cart" value="{{id}}">Agregar al carrito</button>
+</div>
+{{/each}}
+
+<div class="pagination">
+  {{#if showPreviousPage}}
+  <a href="/productos?page={{previousPage}}">Anterior</a>
+  {{/if}}
+  {{#if showNextPage}}
+  <a href="/productos?page={{nextPage}}">Siguiente</a>
+  {{/if}}
+</div>
+<br>
+<br>
+<h2>IR AL CARRITO</h2>
+<a href="/carrito"><button>Carrito</button></a>
+<br>
+<br>
+
+<h2>Hola {{usuario.nombre}}, tu rol es: {{usuario.rol}}</h2>
+<form id="formLogout">
+  <button type="submit">Logout</button>
+</form>
+</div>
+
+<script  type="module" src="/js/carrito.js"></script>
+<script  type="module" src="/js/logout.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <h2> bienvenido {{user.nombre}}!! a tus {{user.age}} ya sos {{user.role}} de nuestra pagina!!  no olvides revisar la promo que te dejamos en {{user.email}}</h2>
+
+
+<h2>Los productos</h2>
+<div id="listado">
+    {{#if hayProductos}}
+    <ul>
+        {{#each productos}}
+        <form>
+            <li>Id: {{this.id}} || Title: {{this.title}}|| Stock: {{this.stock}} || Category: {{this.category}} || Price: {{this.price}}</li>
+            <button type="button" class="add-to-cart" data-product-id="{{this.id}}">Agregar al carrito</button>
+        </form>
+            
+        {{/each}}
+    </ul>
+
+
+<a href="{{jsonInfo.prevLink}}">Pagina anterior ' {{jsonInfo.prevPage}} '</a> <br>
+
+<a href="{{jsonInfo.nextLink}}">Siguiente pagina ' {{jsonInfo.nextPage}} '</a>
+    
+    {{else}}
+    <p>no hay productos para mostrar</p>
+    {{/if}}
+
+
+    <h1>Tu perfil (sin datos sensibles)</h1>
+<p>Nombre completo: {{user.nombre}}</p>
+<p>Correo electronico: {{user.email}}</p>
+<p>Edad: {{user.age}}</p>
+<p>ROL: {{user.role}}</p>
+<form id="formLogout">
+  <button type="submit">Logout</button>
+</form>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="/js/criptografia.js"></script>
+<script  type="module" src="/js/muestraProducts.js"></script> --}}

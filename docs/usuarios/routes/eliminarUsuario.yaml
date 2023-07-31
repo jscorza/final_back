@@ -1,0 +1,24 @@
+paths:
+  /api/usuarios/{id}:
+    delete:
+      summary: Elimina un usuario por su ID.
+      tags:
+        - Usuarios
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del usuario a eliminar.
+          required: true
+          schema:
+            type: string
+      security:
+        - jwt: []
+      responses:
+        "200":
+          description: Éxito. Usuario eliminado exitosamente.
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para eliminar su cuenta.
+        "404":
+          description: No encontrado. Usuario no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

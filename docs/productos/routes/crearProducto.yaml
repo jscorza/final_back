@@ -1,0 +1,23 @@
+paths:
+  /api/productos:
+    post:
+      summary: Crea un nuevo producto.
+      tags:
+        - Productos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/DataProducto'
+      responses:
+        "201":
+          description: Éxito. El producto ha sido creado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        "400":
+          description: Solicitud incorrecta. Los datos proporcionados no son válidos.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

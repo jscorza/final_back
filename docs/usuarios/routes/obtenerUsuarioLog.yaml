@@ -1,0 +1,19 @@
+paths:
+  /api/usuarios/log:
+    get:
+      summary: Devuelve el usuario logueado.
+      tags:
+        - Usuarios
+      security:
+        - jwt: []
+      responses:
+        "200":
+          description: Éxito. Devuelve el usuario logueado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para obtener los datos.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

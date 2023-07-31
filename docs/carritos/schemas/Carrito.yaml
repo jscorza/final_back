@@ -1,0 +1,35 @@
+components:
+  schemas:
+    Carrito:
+      type: object
+      required:
+        - id
+        - productos
+        - estado
+      properties:
+        id:
+          type: string
+          description: El id del carrito.
+        productos:
+          type: array
+          items:
+            type: object
+            properties:
+              producto:
+                type: string
+                description: El id del producto en el carrito.
+              quantity:
+                type: number
+                description: La cantidad del producto en el carrito.
+          description: Los productos en el carrito con sus respectivas cantidades.
+        estado:
+          type: string
+          description: El estado del carrito.
+      example:
+        id: 5h58sk24u-3j5k2hr3-t5u6-365n-sk8ghd7
+        productos:
+          - producto: 3j5k2hr3-t5u6-365n-sk85-h58sk24ughd7
+            quantity: 2
+          - producto: 4ughd7r3-365n-t5u6-sk85-h58sk23j5k2h
+            quantity: 1
+        estado: dsiponible

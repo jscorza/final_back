@@ -1,0 +1,26 @@
+paths:
+  /api/carritos/agregar-producto/{id}:
+    put:
+      summary: Agrega un producto al carrito abierto del usuario.
+      tags:
+        - Carritos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del producto a agregar al carrito.
+          required: true
+          schema:
+            type: string
+      security:
+        - jwt: []
+      requestBody:
+        required: false
+      responses:
+        "200":
+          description: Producto agregado exitosamente al carrito abierto.
+        "401":
+          description: No autorizado. El usuario debe estar autenticado para agregar productos al carrito.
+        "404":
+          description: No encontrado. Producto no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

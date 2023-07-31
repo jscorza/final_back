@@ -1,0 +1,32 @@
+paths:
+  /api/carritos/{id}:
+    put:
+      summary: Actualiza un carrito por su ID.
+      tags:
+        - Carritos
+      parameters:
+        - name: id
+          in: path
+          description: Parámetro de ruta con el ID del carrito a actualizar.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/DataCarrito'
+      responses:
+        "200":
+          description: Éxito. El carrito ha sido actualizado exitosamente.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'
+        "400":
+          description: Solicitud incorrecta. Los datos proporcionados no son válidos.
+        "404":
+          description: No encontrado. Carrito no encontrado con el ID dado.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

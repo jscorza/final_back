@@ -1,0 +1,18 @@
+<h1>Lista de Usuarios</h1>
+
+{{#each usuarios}}
+  <div>
+    <h3>Nombre del usuario: {{nombre}}</h3>
+    <p>Email: {{email}}</p>
+    <p>Rol: {{rol}}</p>
+
+    <h3>Carritos de {{nombre}}:</h4>
+    {{#each carritos}}
+      <p>ID Carrito: {{idCarrito}}</p>
+      <p>Estado: {{estado}}</p>
+    {{/each}}
+  </div>
+  <br>
+  <br>
+  <br>
+{{/each}}

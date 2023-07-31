@@ -1,0 +1,23 @@
+paths:
+  /api/carritos:
+    post:
+      summary: Crea un nuevo carrito.
+      tags:
+        - Carritos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/DataCarrito'
+      responses:
+        "201":
+          description: Éxito. El carrito ha sido creado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'
+        "400":
+          description: Solicitud incorrecta. Los datos proporcionados no son válidos.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

@@ -1,0 +1,50 @@
+components:
+  requestBodies:
+    DataProducto:
+      type: object
+      required:
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - category
+      properties:
+        title:
+          type: string
+          description: El título del producto.
+        description:
+          type: string
+          description: La descripción del producto.
+        code:
+          type: string
+          description: El código del producto.
+        price:
+          type: number
+          description: El precio del producto.
+        stock:
+          type: number
+          description: La cantidad en stock del producto.
+        category:
+          type: string
+          description: La categoría del producto.
+        thumbnail:
+          type: array
+          items:
+            type: string
+          description: La lista de URLs de imágenes del producto.
+        status:
+          type: string
+          description: El estado del producto.
+      example:
+        id: 3j5k2hr3-t5u6-365n-sk85-h58sk24ughd7
+        title: Ejemplo de Producto
+        description: Este es un ejemplo de producto.
+        code: ABC123
+        price: 19.99
+        stock: 100
+        category: Electrónicos
+        thumbnail:
+          - https://example.com/producto1.jpg
+          - https://example.com/producto2.jpg
+        status: disponible
