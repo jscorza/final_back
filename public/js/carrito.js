@@ -57,7 +57,6 @@ const buyCartButton = document.querySelectorAll('.comprar');
 buyCartButton.forEach(button => {
   button.addEventListener('click', async (event) => {
     try {
-      event.preventDefault();
       const response = await comprar();
       if(response.ok){
         alert("compra realizada, revisa tu casilla de email para obtener el comprobante")
