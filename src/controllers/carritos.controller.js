@@ -65,7 +65,7 @@ export async function handlePutAgregarProducto(req, res, next){
     req.logger.http('entre al PutAgregarProducto    (carritos.controller)')
     const { id } = req.params
     const usuario = req.usuario
-    req.logger.verbose('recibi id: ' + req.params.id + 'usuario: '+ JSON.stringify(req.usuario))
+    req.logger.verbose(`recibi id: ${req.params.id} \n para el carrito del usuario logueado: ${JSON.stringify(req.usuario)} \n`)
     const agregado = await carritosService.agregarProducto(id,usuario.id)
     next()
   } catch (error) {
@@ -100,6 +100,8 @@ export async function handlePutCompra(req, res, next){
     const usuario = req.usuario
     req.logger.verbose('usuario que realiza la compra: '+ JSON.stringify(req.usuario))
     const compra = await carritosService.compra(usuario.id)
+    req.logger.verbose('ticket creado de la compra: '+ JSON.stringify(compra))
+
     next()
   } catch (error) {
     req.logger.error('fallo PutCompra. error: ' + error.message)

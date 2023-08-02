@@ -9,5 +9,7 @@ usuariosRouter.get('/:id?', usuariosController.handleGet)
 
 usuariosRouter.post('/', usuariosController.handlePost)
 usuariosRouter.put('/:id', usuariosController.handlePut)
+usuariosRouter.delete('/borrarInactivos',usuariosController.handleDeleteInactivos)
 usuariosRouter.delete('/:id', usuariosController.handleDelete)
+
 

@@ -58,3 +58,20 @@ export async function handleDelete(req, res, next) {
     next(error)
   }
 }
+
+export async function handlePutRestock(req, res, next) {
+  try {
+    
+    const productosConStockMenor10 = await productosRepository.readMany({ stock: { $lt: 10 } });
+
+    
+    for (const producto of productosConStockMenor10) {
+      
+      await productosRepository.updateOne({ id: producto.id }, {stock:10});
+    }
+
+    res.status(200).json({ message: "Restock realizado correctamente." });
+  } catch (error) {
+    next(error);
+  }
+}

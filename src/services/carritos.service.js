@@ -4,6 +4,7 @@ import { carritosRepository } from '../repositories/carritos.repository.js'
 import { productosRepository } from '../repositories/productos.repository.js'
 import { ticketsRepository } from '../repositories/tickets.repository.js'
 import { usuariosRepository } from '../repositories/usuarios.repository.js'
+import { emailService } from './email.service.js'
 
 class CarritosService {
 
@@ -200,6 +201,10 @@ class CarritosService {
         amount += precioTotal;})
         const ticket = new Ticket({purchaser: usuario.id, amount:amount})
         const tick = await ticketsRepository.create(ticket.dto())
+
+    await emailService.send(usuario.email,`gracias por tu compra ${usuario.nombre}, tu id(comprobante) de compra es: ${tick.id} y el monto es ${tick.amount}`)
+   return tick
+  
   }
   
 }

@@ -27,7 +27,7 @@ if (loginForm instanceof HTMLFormElement) {
 
     if (response.status === 201) {
       window.location.replace('/')
-    } else if (response.status === 401) {
+    } else{
       alert('credenciales invalidas!')
     }
   })

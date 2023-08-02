@@ -5,6 +5,7 @@ import * as productosController from '../../controllers/productos.controller.js'
 export const productosRouter = Router()
 
 productosRouter.get('/:id?', productosController.handleGet)
+productosRouter.put('/restock', productosController.handlePutRestock)
 productosRouter.post('/', productosController.handlePost)
 productosRouter.put('/:id', productosController.handlePut)
 productosRouter.delete('/:id', productosController.handleDelete)

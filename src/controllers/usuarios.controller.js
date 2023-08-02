@@ -96,3 +96,16 @@ export async function handlePutCarrito (req, res, next){
   }
 
 }
+export async function handleDeleteInactivos (req, res, next){
+  req.logger.http('entre al Delete de inactivos')
+  try {
+    const borrados = await usuariosService.borrarInactivos()
+    req.logger.verbose('borrados: ' + JSON.stringify(borrados))
+    res.json(borrados).status(200)
+  } catch (error) {
+    req.logger.error('fallo DeleteInactivos error: ' + error.message)
+    next(error);
+  }
+  
+
+}

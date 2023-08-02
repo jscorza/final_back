@@ -1,39 +1,65 @@
 <div>
-<h1>Productos</h1>
+  <h1>Productos</h1>
 
-{{#each productos}}
-<div class="product">
-  <h2>{{title}}</h2>
-  <p>{{description}}</p>
-  <p>Precio: {{price}}</p>
-  <p>Stock: {{stock}}</p>
-  <button class="add-to-cart" value="{{id}}">Agregar al carrito</button>
-</div>
-{{/each}}
+  {{#if esAdmin}}
+    <!-- Mostrar solo si esAdmin es true -->
+    {{#each productos}}
+    <div class="product">
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <p>Precio: {{price}}</p>
+      <p>Stock: {{stock}}</p>
 
-<div class="pagination">
-  {{#if showPreviousPage}}
-  <a href="/productos?page={{previousPage}}">Anterior</a>
+      {{#if sinStock}}
+        <button class="sold-out" disabled>Sold Out</button>
+      {{else}}
+        <button class="add-to-cart" value="{{id}}">Agregar al carrito</button>
+      {{/if}}
+    </div>
+    {{/each}}
+  {{else}}
+    <!-- Mostrar solo si esAdmin es false -->
+    {{#each productos}}
+    <div class="product">
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <p>Precio: {{price}}</p>
+      {{!-- No mostramos el stock --}}
+      {{#if sinStock}}
+        <button class="sold-out" disabled>Sold Out</button>
+      {{else}}
+        <button class="add-to-cart" value="{{id}}">Agregar al carrito</button>
+      {{/if}}
+    </div>
+    {{/each}}
   {{/if}}
-  {{#if showNextPage}}
-  <a href="/productos?page={{nextPage}}">Siguiente</a>
-  {{/if}}
-</div>
-<br>
-<br>
-<h2>IR AL CARRITO</h2>
-<a href="/carrito"><button>Carrito</button></a>
-<br>
-<br>
+  <br>
+  <br>
+  <div class="pagination">
+    {{#if showPreviousPage}}
+      <a href="/productos?page={{previousPage}}">Anterior</a>
+    {{/if}}
+    {{#if showNextPage}}
+      <a href="/productos?page={{nextPage}}">Siguiente</a>
+    {{/if}}
+  </div>
+  <br>
+  <br>
+  <h2>IR AL CARRITO</h2>
+  <a href="/carrito"><button>Carrito</button></a>
+  <br>
+  <br>
 
-<h2>Hola {{usuario.nombre}}, tu rol es: {{usuario.rol}}</h2>
-<form id="formLogout">
-  <button type="submit">Logout</button>
-</form>
+  <h2>Hola {{usuario.nombre}}, tu rol es: {{usuario.rol}}</h2>
+  <form id="formLogout">
+    <button type="submit">Logout</button>
+  </form>
 </div>
 
-<script  type="module" src="/js/carrito.js"></script>
-<script  type="module" src="/js/logout.js"></script>
+<script type="module" src="/js/carrito.js"></script>
+<script type="module" src="/js/logout.js"></script>
+
+
 
 
 

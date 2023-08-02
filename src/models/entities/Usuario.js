@@ -9,6 +9,7 @@ export class Usuario {
   #password
   #rol
   #carritos
+  #ultimaConexion
   constructor({
     id = newId(),
     nombre,
@@ -17,6 +18,7 @@ export class Usuario {
     rol = 'user',
     carritos = [],
     edad,
+    ultimaConexion = Date.now(),
   }) {
     this.#id = id
 
@@ -37,6 +39,8 @@ export class Usuario {
     
     
     this.#carritos = carritos
+
+    this.#ultimaConexion = ultimaConexion
   }
 
   
@@ -49,6 +53,7 @@ export class Usuario {
       email: this.#email,
       rol: this.#rol,
       carritos: this.#carritos,
+      ultimaConexion: this.#ultimaConexion
     }
   }
 }

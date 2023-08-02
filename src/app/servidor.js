@@ -7,7 +7,6 @@ import { COOKIE_SECRET } from '../config/auth.config.js'
 import { vistasRouter } from '../routers/vistas.router.js'
 import { PORT } from '../config/server.config.js'
 import { conectar } from '../database/mongoose.js'
-import { testRouter } from '../routers/test/productos.test.router.js'
 import { logger } from '../middlewares/logger.js'
 
 await conectar()
@@ -40,4 +39,3 @@ app.use(logger)
 
 app.use('/api', apiRouter) 
 app.use('/', vistasRouter)
-app.use('/',testRouter)

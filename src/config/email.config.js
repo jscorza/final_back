@@ -19,9 +19,9 @@ const TEST_EMAIL_CONFIG = {
 export let EMAIL_CONFIG
 if (process.env.NODE_ENV === 'PROD') {
   EMAIL_CONFIG = PROD_EMAIL_CONFIG
-  console.log("ENV PROD")
+  console.log("entorno PROD")
 } else {
   EMAIL_CONFIG = TEST_EMAIL_CONFIG
-  console.log("ENV test/dev")
+  console.log("entorno DEV")
   
 }

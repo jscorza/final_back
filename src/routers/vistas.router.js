@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { extraerCredenciales, soloAdmin, soloAutenticados } from '../middlewares/auth.js'
-import { renderProducts } from '../renders/productos.render.js'
+import { renderProducts, renderRestock } from '../renders/productos.render.js'
 import { renderCarrito } from '../renders/carrito.render.js'
 import { renderUsuarios } from '../renders/usuarios.render.js'
 
@@ -15,6 +15,8 @@ vistasRouter.get('/productos', extraerCredenciales, soloAutenticados,renderProdu
 vistasRouter.get('/carrito', extraerCredenciales, soloAutenticados,renderCarrito)
 
 vistasRouter.get('/usuarios', extraerCredenciales,soloAdmin,renderUsuarios)
+
+vistasRouter.get('/restock', extraerCredenciales,soloAdmin,renderRestock)
 
 vistasRouter.get('/register', async (req, res, next) => {
     res.render('register', {

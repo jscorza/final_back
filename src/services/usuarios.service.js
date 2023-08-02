@@ -26,6 +26,33 @@ class UsuariosService {
     async obtenerTodos() {
       return await usuariosManager.obtenerTodos()
     }
+
+    async borrarInactivos() {
+      try {
+          const fechaLimite = new Date(Date.now() - 300000); // Restamos 5 minutos en milisegundos, esto pa probar el sistema sin esperar media hora :)
+  
+          const usuariosInactivos = await usuariosRepository.readMany({
+              ultimaConexion: { $lt: fechaLimite.toISOString() },
+              rol: { $ne: "admin" }
+          });
+  
+          const usuariosBorrados = [];
+  
+          for (const usuario of usuariosInactivos) {
+              await usuariosRepository.deleteOne({ id: usuario.id });
+              usuariosBorrados.push(usuario);
+          }
+  
+          return usuariosBorrados;
+      } catch (error) {
+          throw new Error("Error al borrar usuarios inactivos");
+      }
   }
+  
+  
+  
+  
+  
+}
   
   export const usuariosService = new UsuariosService()

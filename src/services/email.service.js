@@ -41,7 +41,7 @@ const emailServiceGmail = new EmailService(EMAIL_CONFIG)
 
 export let emailService
 if (process.env.NODE_ENV === 'PROD') {
-  emailService = emailServiceGmail
+  emailService = emailServiceMock
 } else {
   emailService = emailServiceMock
 }

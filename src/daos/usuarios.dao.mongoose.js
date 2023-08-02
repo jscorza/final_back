@@ -9,6 +9,7 @@ const usuariosSchema = new mongoose.Schema({
   rol: String,
   edad:Number,
   carritos: [{idCarrito: String, estado:String}],
+  ultimaConexion: Date,
 }, { versionKey: false });
 
 const usuariosModel = mongoose.model('usuarios', usuariosSchema)

@@ -1,25 +1,17 @@
-import { usuariosRepository } from '../repositories/usuarios.repository.js'
-import { criptografiador } from '../utils/criptografia.js'
+import { sesionesService } from '../services/sesiones.service.js'
 
 export async function postSesionesController(req, res, next) {
     req.logger.http('entre al Post Sesiones')
     const credenciales = req.body
-    req.logger.verbose('recibi body (credenciales): ' + JSON.stringify(req.body))
+    req.logger.verbose('recibi body (credenciales para login(no guardamos ningun dato de estos)): ' + JSON.stringify(req.body))
     
 
     try {
+        const token = await sesionesService.loginUser(credenciales)
         
-        const usuario = await usuariosRepository.readOne({email: credenciales.email})
-        
-        if (!criptografiador.comparar(credenciales.password, usuario.password)) {
-            return next(new Error('AUTHENTICATION ERROR'))
-        }
-
-        const token = criptografiador.generarToken(usuario)
         res.cookie('authToken', token, { httpOnly: true, signed: true, maxAge: 1000 * 60 * 60 * 24 })
-
+        
         res.sendStatus(201)
-
     } catch (error) {
         req.logger.error('fallo Post sessiones. error: ' + error.message)
         next(new Error('AUTHENTICATION ERROR'))

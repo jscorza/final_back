@@ -1,0 +1,49 @@
+{"level":"http","message":"entre al DELETE Sesiones"}
+{"level":"http","message":"entre al POST usuarios "}
+{"level":"error","message":"fallo POST usuarios. error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials g8-20020a9d6208000000b006b9848f8aa7sm5824910otj.45 - gsmtp"}
+{"level":"http","message":"entre al POST usuarios "}
+{"level":"http","message":"entre al DELETE Sesiones"}
+{"level":"http","message":"entre al POST usuarios "}
+{"level":"http","message":"entre al Delete de inactivos"}
+{"level":"http","message":"entre al Delete de inactivos"}
+{"level":"http","message":"entre al Delete de inactivos"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutAgregarProducto    (carritos.controller)"}
+{"level":"http","message":"entre al PutCompra"}
+{"level":"http","message":"entre al Delete de inactivos"}
