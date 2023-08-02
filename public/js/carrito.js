@@ -59,7 +59,7 @@ buyCartButton.forEach(button => {
     event.preventDefault();
     await comprar();
     location.reload()
-    
+    alert("revisa tu casilla de email para recibir el detalle de tu comprra")
   });
 });
 
