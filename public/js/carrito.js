@@ -71,7 +71,7 @@ async function comprar() {
         'Content-Type': 'application/json'
       }})
     if(response.ok){
-      alert("compra realizada exitosamente, revisa tu mail para obtener tu comprobante")      
+      return alert("compra realizada exitosamente, revisa tu mail para obtener tu comprobante")      
     };
   } catch (error) {
     console.error('Error al realizar carrito:', error.message);
