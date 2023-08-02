@@ -65,12 +65,14 @@ buyCartButton.forEach(button => {
 
 async function comprar() {
   try{
-    await fetch(`/api/carritos/comprar/carrito`, {
+    const response = await fetch(`/api/carritos/comprar/carrito`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
-    });
+      }})
+    if(response.ok){
+      alert("compra realizada exitosamente, revisa tu mail para obtener tu comprobante")      
+    };
   } catch (error) {
     console.error('Error al realizar carrito:', error.message);
   }
