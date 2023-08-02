@@ -1,0 +1,15 @@
+paths:
+  /api/usuarios/borrarInactivos:
+    delete:
+      summary: Elimina los que no tuvieron conexion en los ultimos 5 minutos.
+      tags:
+        - Usuarios
+      security:
+        - jwt: []
+      responses:
+        "200":
+          description: Éxito. Usuarios inactivos eliminados exitosamente.
+        "401":
+          description: No autorizado. El usuario debe ser Admin para acceder para eliminar cuentas.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

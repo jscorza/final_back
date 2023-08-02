@@ -1,0 +1,20 @@
+paths:
+  /api/productos/restock:
+    put:
+      summary: Actualiza todos los productos con stock < 10, agregandole 10 unidades de stock .
+      tags:
+        - Productos
+      responses:
+        "200":
+          description: Éxito. El stock ha sido actualizado exitosamente.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+        
+        "401":
+          description: No autorizado. El usuario debe estar autenticado(ser admin) para efectuar un restock.
+        "500":
+          description: Error del servidor. Se produjo un error interno en el servidor.

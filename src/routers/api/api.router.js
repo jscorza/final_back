@@ -5,7 +5,7 @@ import { usuariosRouter } from './usuarios.router.js'
 import { carritosRouter } from './carritos.router.js'
 import { productosRouter } from './productos.router.js'
 import { sesionesRouter } from './sesiones.router.js'
-import { extraerCredenciales } from '../../middlewares/auth.js'
+import { extraerCredenciales, soloAdmin } from '../../middlewares/auth.js'
 import { apiErrorHandler } from '../../middlewares/manejoDeErrores.js'
 import { docsRouter } from './documentacion.router.js'
 
@@ -20,7 +20,7 @@ apiRouter.use('/docs', docsRouter)
 
 apiRouter.use('/productos',extraerCredenciales, productosRouter)
 apiRouter.use('/carritos',extraerCredenciales, carritosRouter)
-apiRouter.use('/usuarios',extraerCredenciales, usuariosRouter)
+apiRouter.use('/usuarios',extraerCredenciales,  usuariosRouter)
 apiRouter.use('/tickets', ticketsRouter)
 apiRouter.use('/sesiones', sesionesRouter)
 
