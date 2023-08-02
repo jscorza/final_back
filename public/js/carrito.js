@@ -57,12 +57,7 @@ const buyCartButton = document.querySelectorAll('.comprar');
 buyCartButton.forEach(button => {
   button.addEventListener('click', async (event) => {
     event.preventDefault();
-    const compra = await comprar();
-    if(compra){
-      alert("compra realizada exitosamente, revisa tu casilla email para obtener tu comprobante")
-    }
-    /* location.reload() */
-    
+    await comprar();
   });
 });
 
@@ -74,7 +69,8 @@ async function comprar() {
         'Content-Type': 'application/json'
       }})
     if(response.ok){
-      return true      
+      alert("compra realizada exitosamente, revisa tu casilla email para obtener tu comprobante")      
+      location.reload()
     };
   } catch (error) {
     console.error('Error al realizar carrito:', error.message);
