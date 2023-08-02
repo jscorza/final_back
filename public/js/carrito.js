@@ -58,6 +58,7 @@ buyCartButton.forEach(button => {
   button.addEventListener('click', async (event) => {
     event.preventDefault();
     await comprar();
+    location.reload()
     
   });
 });
