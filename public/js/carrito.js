@@ -61,7 +61,7 @@ buyCartButton.forEach(button => {
     if(compra){
       alert("compra realizada exitosamente, revisa tu casilla email para obtener tu comprobante")
     }
-    location.reload()
+    /* location.reload() */
     
   });
 });
