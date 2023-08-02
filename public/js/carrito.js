@@ -56,8 +56,17 @@ const buyCartButton = document.querySelectorAll('.comprar');
 // Agregar controlador de eventos para el clic en el botón "eliminar al carrito"
 buyCartButton.forEach(button => {
   button.addEventListener('click', async (event) => {
-    event.preventDefault();
-    await comprar();
+    try {
+      event.preventDefault();
+      const response = await comprar();
+      if(response.ok){
+        alert("compra realizada, revisa tu casilla de email para obtener el comprobante")
+        location.reload()
+      }
+    } catch (error) {
+      alert("Hubo un error en la compra")
+    }
+   
   });
 });
 
@@ -68,10 +77,7 @@ async function comprar() {
       headers: {
         'Content-Type': 'application/json'
       }})
-    if(response.ok){
-      alert("compra realizada exitosamente, revisa tu casilla email para obtener tu comprobante")      
-      location.reload()
-    };
+    return response;
   } catch (error) {
     console.error('Error al realizar carrito:', error.message);
   }
